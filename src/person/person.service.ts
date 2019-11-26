@@ -1,10 +1,17 @@
 import { Injectable, Logger, Body } from '@nestjs/common';
-import { Person } from 'src/entity/person';
+import { Person } from 'src/entity/person.entity';
 import { UpdatePersonDto } from 'src/dto/person-dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class PersonService {
 
+    constructor(
+        @InjectRepository(Person)
+        private readonly personRepository: Repository<Person>
+    ) {}
+    
     private persons: Person[] = [];
     
     findAll(): Person[] {
