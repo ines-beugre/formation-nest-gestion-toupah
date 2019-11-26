@@ -5,14 +5,14 @@ import { Person } from 'src/entity/person';
 
 @Controller('person')
 export class PersonController {
-    personService: PersonService;
+    constructor(private readonly personService: PersonService) {}
 
     @Get()
     TestPerson() {
         return 'Person App';
     }
 
-    @Get()
+    @Get('/persons')
     async findAll(): Promise<Person[]> {
         return this.personService.findAll();
     }

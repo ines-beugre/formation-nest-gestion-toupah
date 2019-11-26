@@ -7,7 +7,6 @@ export class PersonService {
 
     private persons: Person[] = [];
     
-
     findAll(): Person[] {
         Logger.log("find all persons");
         return this.persons;
