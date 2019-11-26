@@ -8,7 +8,7 @@ export class PersonService {
     private persons: Person[] = [];
     
     findAll(): Person[] {
-        Logger.log("find all persons");
+        Logger.log("find all persons on the list after hmr");
         return this.persons;
     }
 
