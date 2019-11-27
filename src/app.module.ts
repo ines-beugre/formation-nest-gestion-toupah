@@ -10,16 +10,7 @@ import { MYSQL} from './config/config';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: MYSQL.HOST,
-      port: MYSQL.PORT,
-      username: MYSQL.USERNAME,
-      password: MYSQL.PASSWORD,
-      database: MYSQL.DATABASE,
-      entities: [Person],
-      synchronize: true,
-    }),
+    TypeOrmModule.forRoot(),
     PersonModule,
     PersonHttpModule,
   ],
